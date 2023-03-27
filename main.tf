@@ -1,18 +1,10 @@
-
+provider "aws" {
+  region     = "us-west-2"
+}
 
 resource "aws_instance" "myec2" {
     ami = "ami-0c75f58fc78dd920e"
-    instance_type = lookup(var.instance_type,terraform.workspace)
+    instance_type = "t2.micro"
   
 }
 
-variable "instance_type" {
-    type = map
-
-    default = {
-        default = "t2.nano"
-        dev = "t2.micro"
-        prod = "t2.large"
-    }
-  
-}
