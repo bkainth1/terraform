@@ -10,10 +10,11 @@ jobs:
          uses: actions/checkout@v4
 
        - name: welcome message
-         run: echo "My first Github actions job"
-              ls -ltra
+         run: |
+           echo "My first Github actions job"
+           ls -ltra
+           cat main.tf
 
-       - name: list files
-         run: ls
+    
 
        
