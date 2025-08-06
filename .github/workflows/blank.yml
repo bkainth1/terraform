@@ -1,0 +1,19 @@
+name: Ls Workflow
+
+on: push
+
+jobs:
+    first_job:
+       runs-on: ubuntu-latest
+       steps:
+       - name: checkout repo
+         uses: actions/checkout@4
+
+       - name: welcome message
+         run: echo "My first Github actions job"
+              ls -ltra
+
+       - name: list files
+         run: ls
+
+       
