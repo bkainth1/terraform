@@ -28,7 +28,7 @@ jobs:
           repository: bkainth1/terraform-repo
           # token: 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
           ref: main
-          path: 002-ccoe-infra-modules
+          path: ../002-ccoe-infra-modules
 
       - name: Check directory
         run: |
