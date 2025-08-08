@@ -18,11 +18,12 @@ jobs:
     steps:
       - name: Checkout foundation-azure-infra-app-we Repository
         uses: actions/checkout@v4
+        with:
+          path: main-repo
 
       - name: Check secret visibility
         run: echo "Has TERRAFORM_REPO? ${{ secrets.TERRAFORM_REPO != '' }}"
-        with:
-          path: main-repo
+        
       
       - name: Checkout 002-ccoe-infra-modules
         uses: actions/checkout@v4
