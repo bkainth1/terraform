@@ -1,19 +1,38 @@
-name: Ls Workflow
+name: Terraform-workflow-WE
 
-on: push
+on: 
+  workflow_dispatch:
+  # push:
+    # branches: [ main ]
+    # paths:
+    #   - '**.tf'
+    
+env:
+  TF_IN_AUTOMATION: true
+  TF_INPUT: false
 
 jobs:
-    first_job:
-       runs-on: ubuntu-latest
-       steps:
-       - name: checkout repo
-         uses: actions/checkout@v4
+  plan:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout foundation-azure-infra-app-we Repository
+        uses: actions/checkout@v4
 
-       - name: welcome message
-         run: |
-           echo "My first Github actions job"
-           ls -ltra
-           cat main.tf
+      
+      - name: Checkout 002-ccoe-infra-modules
+        uses: actions/checkout@v4
+        with:
+          repository: bkainth1/terraform-repo
+          token: ${{ secrets.TERRAFORM_REPO }}
+          ref: main
+          path: 002-ccoe-infra-modules
+
+      - name: Check directory
+        run: |
+           ls -lrt
+           cd 002-ccoe-infra-modules
+           ls -lrt
 
     
 
