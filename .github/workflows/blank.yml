@@ -19,6 +19,8 @@ jobs:
       - name: Checkout foundation-azure-infra-app-we Repository
         uses: actions/checkout@v4
 
+      - name: Check secret visibility
+          run: echo "Has TERRAFORM_REPO? ${{ secrets.TERRAFORM_REPO != '' }}"
       
       - name: Checkout 002-ccoe-infra-modules
         uses: actions/checkout@v4
