@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check secret visibility
-          run: echo "Has TERRAFORM_REPO? ${{ secrets.TERRAFORM_REPO != '' }}"
+        run: echo "Has TERRAFORM_REPO? ${{ secrets.TERRAFORM_REPO != '' }}"
       
       - name: Checkout 002-ccoe-infra-modules
         uses: actions/checkout@v4
