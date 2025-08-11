@@ -1,6 +1,16 @@
 provider "azurerm" {
-  features {}
+  subscription_id = "f7b975be-0b32-4da9-b4da-1bdd74e15113"
+  tenant_id       = "5413b70b-c2ba-47a6-b7f4-c068c7ed7c94"
+  client_id       = "2222df85-901e-40b1-82cd-9569eb9d3044"
+  skip_provider_registration = "true"
+  features {
+    key_vault {
+      purge_soft_delete_on_destroy    = true
+      recover_soft_deleted_key_vaults = true
+    }
+  }
 }
+
 
 resource "azurerm_resource_group" "demo_rg" {
   name     = "demo-rg"
