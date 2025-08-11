@@ -61,10 +61,14 @@ jobs:
             # terraform plan
 
       - name: Terraform Validate
-        run: terraform validate
+        run: |
+            ls
+            terraform validate
 
       - name: Terraform Plan
-        run: terraform plan
+        run: |
+            ls
+            terraform plan
     
 
        
