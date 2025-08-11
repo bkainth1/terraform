@@ -48,6 +48,12 @@ jobs:
           azcliversion: latest
           inlineScript: |
             az account show
+
+      - name: Terraform init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
     
 
        
