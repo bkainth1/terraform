@@ -55,19 +55,18 @@ jobs:
       - name: Terraform init
         run: |
             cd main-repo
-            ls
             terraform init
             # terraform validate
             # terraform plan
 
       - name: Terraform Validate
         run: |
-            ls
+            cd main-repo
             terraform validate
 
       - name: Terraform Plan
         run: |
-            ls
+            cd main-repo
             terraform plan
     
 
