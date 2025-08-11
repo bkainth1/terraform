@@ -49,6 +49,9 @@ jobs:
           inlineScript: |
             az account show
 
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        
       - name: Terraform init
         run: terraform init
 
