@@ -48,6 +48,7 @@ resource "azurerm_linux_virtual_machine" "demo_vm" {
   location            = azurerm_resource_group.demo_rg.location
   size                = "Standard_B1s"
   admin_username      = "azureuser"
+  disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.demo_nic.id,
   ]
