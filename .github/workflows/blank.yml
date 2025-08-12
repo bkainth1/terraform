@@ -77,4 +77,7 @@ jobs:
             main-repo/tfplan
             main-repo/paln.txt
 
-        
+      - name: Terraform Apply
+        working-directory: main-repo
+        run: |
+            terraform apply 
