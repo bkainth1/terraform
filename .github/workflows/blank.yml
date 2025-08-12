@@ -76,7 +76,9 @@ jobs:
       - name: Save Plan
         uses: actions/upload-artifact@v4
         with:
-          main-repo/tfplan
-          main-repo/paln.txt
+          name: tf-plan-${{ github.run_number }}
+          path: |
+            main-repo/tfplan
+            main-repo/paln.txt
 
         
