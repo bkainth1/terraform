@@ -69,10 +69,6 @@ jobs:
             terraform plan -out=tfplan
             
 
-      - name: Show Plan
-        working-directory: main-repo
-        run: terraform show -no-color tfplan > plan.txt
-
       - name: Save Plan
         uses: actions/upload-artifact@v4
         with:
