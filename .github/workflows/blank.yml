@@ -38,7 +38,7 @@ jobs:
 
       - name: shell commands
         run: |
-           ip a
+           /usr/sbin/ip a
           
           
       - name: Azure Login
