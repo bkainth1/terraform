@@ -37,6 +37,12 @@ jobs:
       # - name: Install Azure cli
       #   run: |
       #       curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+      - name: shell commands
+        run: |
+          ping 10.20.0.63
+          telnet 10.20.0.63 22
+          
           
       - name: Azure Login
         uses: azure/login@v1
