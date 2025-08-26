@@ -34,9 +34,7 @@ jobs:
           ref: main
           path: 002-ccoe-infra-modules
           #token: ${{ secrets.TERRAFORM_REPO }}
-      # - name: Install Azure cli
-      #   run: |
-      #       curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      
 
       - name: shell commands
         run: |
