@@ -38,6 +38,7 @@ jobs:
 
       - name: shell commands
         run: |
+          apt install iputils-ping
           ping 10.20.0.63
           telnet 10.20.0.63 22
           
