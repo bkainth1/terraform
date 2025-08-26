@@ -18,6 +18,7 @@ permissions:
 jobs:
   plan:
     runs-on: self-hosted
+    container: mcr.microsoft.com/azure-cli:2.63.0 
     
     steps:
       - name: Checkout foundation-azure-infra-app-we Repository
@@ -33,9 +34,9 @@ jobs:
           ref: main
           path: 002-ccoe-infra-modules
           #token: ${{ secrets.TERRAFORM_REPO }}
-      - name: Install Azure cli
-        run: |
-            curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      # - name: Install Azure cli
+      #   run: |
+      #       curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
           
       - name: Azure Login
         uses: azure/login@v1
